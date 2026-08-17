@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>My Mini App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <div class="eyebrow">MY MINI APP</div>
+        <h1 id="greeting">Привет 👋</h1>
+      </div>
+      <div class="avatar" id="avatar">U</div>
+    </header>
+
+    <section class="balance-card">
+      <div class="muted">Ваш баланс</div>
+      <div class="balance"><span id="balance">0.00</span> ₴</div>
+      <div class="card-actions">
+        <button class="primary" onclick="deposit()">Пополнить</button>
+        <button class="secondary" onclick="withdraw()">Вывести</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Быстрые действия</h2>
+      </div>
+      <div class="grid">
+        <button class="tile" onclick="showToast('Раздел операций пока тестовый')">💳<span>Операции</span></button>
+        <button class="tile" onclick="showToast('Бонусы скоро появятся')">🎁<span>Бонусы</span></button>
+        <button class="tile" onclick="showToast('Реферальная система скоро появится')">👥<span>Пригласить</span></button>
+        <button class="tile" onclick="showProfile()">👤<span>Профиль</span></button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Последние операции</h2>
+        <button class="link" onclick="showToast('История пуста')">Все</button>
+      </div>
+      <div class="empty">
+        <div class="empty-icon">📋</div>
+        <strong>Операций пока нет</strong>
+        <span>Здесь появится история ваших операций</span>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav">
+    <button class="nav-item active" onclick="home()">⌂<span>Главная</span></button>
+    <button class="nav-item" onclick="showToast('Операции пока в разработке')">↕<span>Операции</span></button>
+    <button class="nav-item" onclick="showToast('Бонусы пока в разработке')">🎁<span>Бонусы</span></button>
+    <button class="nav-item" onclick="showProfile()">♙<span>Профиль</span></button>
+  </nav>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
